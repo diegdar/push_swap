@@ -1,12 +1,12 @@
 #include "push_swap.h"
 
-void	init_stack(t_stack **stack, char **argv)
+void	init_stack(t_stack **stack, char **argv, int start_index)
 {
 	int			i;
 	long		value;
 	t_stack		*new;
 
-	i = 1;
+	i = start_index;
 	while (argv[i])
 	{
 		if (!is_number(argv[i]))

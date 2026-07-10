@@ -15,6 +15,14 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+/* FLAGS */
+
+typedef struct s_config
+{
+	int		bench;
+	char	*algo;
+}	t_config;
+
 /* STACK */
 
 t_stack	*create_node(int value);
