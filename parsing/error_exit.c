@@ -2,9 +2,9 @@
 
 void	error_exit(t_stack **a, t_stack **b)
 {
-	if (a)
+	if (a && *a)
 		free_stack(a);
-	if (b)
+	if (b && *b)
 		free_stack(b);
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);

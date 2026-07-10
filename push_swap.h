@@ -28,7 +28,7 @@ int	is_number(char *str);
 long	ft_atol(char *str);
 int	has_duplicate(t_stack *stack, int value);
 void	init_stack(t_stack **stack, char **argv);
-void	error_exit(t_stack **stack);
+void	error_exit(t_stack **a, t_stack **b);
 
 /* UTILS */
 
@@ -37,5 +37,6 @@ int	is_sorted(t_stack *stIack);
 int	find_min(t_stack *stack);
 int	find_max(t_stack *stack);
 void	assign_index(t_stack *stack);
+double	compute_disorder(t_stack *stack);
 
 #endif
