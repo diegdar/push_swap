@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "push_swap.h"
 #include <stdio.h> // SOLO PARA TESTING
 
 // Función visual para inspeccionar el estado exacto de tu stack
@@ -65,3 +65,20 @@ int	main(int argc, char **argv)
 
 	return (0);
 }
+/* int	main(int argc, char **argv)
+{
+	t_stack		*a;
+	t_stack		*b;
+	t_config	config;
+	int			start;
+
+	a = NULL;
+	b = NULL;
+	start = parse_flags(argc, argv, &config);
+	if (parse_input(&a, argc, argv, start))
+		return (1);
+	assign_index(a);
+	sort(&a, &b);
+	free_stack(&a);
+	return (0);
+}*/

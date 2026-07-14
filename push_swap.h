@@ -35,8 +35,9 @@ void	free_stack(t_stack **stack);
 int	is_number(char *str);
 long	ft_atol(char *str);
 int	has_duplicate(t_stack *stack, int value);
-void	init_stack(t_stack **stack, char **argv);
+void	build_stack(t_stack **stack, char **argv, int start);
 void	error_exit(t_stack **a, t_stack **b);
+void	parse_input(t_stack **stack, int argc, char **argv, int start);
 
 /* UTILS */
 
