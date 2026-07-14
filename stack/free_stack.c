@@ -1,4 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/14 18:34:55 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 19:22:47 by andrcarr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
 
 void	free_stack(t_stack **stack)
 {
@@ -6,8 +18,7 @@ void	free_stack(t_stack **stack)
 	t_stack	*next;
 
 	if (!stack || !*stack)
-		return;
-
+		return ;
 	current = *stack;
 	while (current)
 	{

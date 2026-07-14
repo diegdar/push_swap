@@ -6,15 +6,16 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:59:58 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 18:00:02 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/14 19:24:58 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_stack	*last_node(t_stack *stack)
 {
-	t_stack *current;
+	t_stack	*current;
+
 	current = stack;
 	if (!current)
 		return (NULL);

@@ -6,11 +6,11 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:57:36 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 17:57:38 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/14 19:11:45 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 long	ft_atol(char *str)
 {
@@ -21,7 +21,7 @@ long	ft_atol(char *str)
 	result = 0;
 	sign = 1;
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' 
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
 		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
@@ -46,4 +46,4 @@ int main(void)
 
     printf("%ld\n", ft_atol(test));
     return (0);
-} */  
+} */

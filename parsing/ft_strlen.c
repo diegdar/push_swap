@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_stack.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/11 17:57:20 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 17:38:57 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/05/13 18:06:08 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/05/27 17:44:04 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	build_stack(t_stack **stack, char **argv, int start)
+size_t	ft_strlen(const char *s)
+/*calcular el largo de un texto */
 {
-	int			i;
-	long		value;
-	t_stack		*new;
+	size_t	i;
 
-	i = start;
-	while (argv[i])
-	{
-		if (!is_number(argv[i]))
-			return (1);
-		value = ft_atol(argv[i]);
-		if (value < INT_MIN || value > INT_MAX)
-			return (1);
-		if (has_duplicate(*stack, (int)value))
-			return (1);
-		new = create_node((int)value);
-		if (!new)
-			return (1);
-		add_back(stack, new);
+	i = 0;
+	while (s[i])
 		i++;
-	}
-	return (0);
+	return (i);
 }

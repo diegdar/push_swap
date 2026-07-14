@@ -6,7 +6,7 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 19:33:57 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 17:34:50 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/14 19:56:17 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ int	parse_input(t_stack **stack, int argc, char **argv, int start)
 		split = ft_split(argv[start], ' ');
 		if (!split || !split[0])
 			return (parse_error(stack, split));
-		if (init_stack(stack, split, 0))
+		if (build_stack(stack, split, 0))
 			return (parse_error(stack, split));
 		free_split(split);
 	}
 	else
 	{
-		if (init_stack(stack, argv, start))
+		if (build_stack(stack, argv, start))
 			return (parse_error(stack, NULL));
 	}
 	return (0);

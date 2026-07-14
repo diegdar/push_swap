@@ -6,13 +6,13 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:57:52 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 17:57:54 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/14 19:12:04 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int has_duplicate(t_stack *stack, int value)
+int	has_duplicate(t_stack *stack, int value)
 {
 	while (stack)
 	{

@@ -6,15 +6,16 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:58:06 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 17:58:08 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/14 19:16:21 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	is_number(char *str)
 {
 	int	i;
+
 	if (!str || *str == '\0')
 		return (0);
 	i = 0;
@@ -29,4 +30,4 @@ int	is_number(char *str)
 		i++;
 	}
 	return (1);
-}   
+}

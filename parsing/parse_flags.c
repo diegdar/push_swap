@@ -6,11 +6,11 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:58:26 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 17:58:28 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/14 19:13:47 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	ft_strcmp(char *s1, char *s2)
 {
@@ -28,7 +28,7 @@ int	parse_flags(int argc, char **argv, t_config *config)
 
 	i = 1;
 	config->bench = 0;
-	config->algo = "adaptive"; 
+	config->algo = "adaptive";
 	while (i < argc)
 	{
 		if (ft_strcmp(argv[i], "--bench") == 0)

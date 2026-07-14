@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_min.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 18:01:25 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 18:01:28 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/06/05 18:58:42 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/06/05 19:11:42 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	find_min(t_stack *stack)
+char	*ft_strdup(const char *s1)
 {
-	int	min;
+	char	*copy;
+	int		i;
 
-	if (!stack)
-		return (0);
-	min = stack->value;
-	while (stack)
+	copy = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (!copy)
+		return (NULL);
+	i = 0;
+	while (s1[i])
 	{
-		if (stack->value < min)
-			min = stack->value;
-		stack = stack->next;
+		copy[i] = s1[i];
+		i++;
 	}
-	return (min);
+	copy[i] = '\0';
+	return (copy);
 }
