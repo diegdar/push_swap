@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_number.c                                        :+:      :+:    :+:   */
+/*   create_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 17:58:06 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 19:16:21 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/14 17:59:43 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 19:24:34 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	is_number(char *str)
+t_stack	*ft_create_node(int value)
 {
-	int	i;
+	t_stack	*node;
 
-	if (!str || *str == '\0')
-		return (0);
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	if (str[i] == '\0')
-		return (0);
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		i++;
-	}
-	return (1);
+	node = malloc(sizeof(t_stack));
+	if (!node)
+		return (NULL);
+	node->value = value;
+	node->index = 0;
+	node->next = NULL;
+	return (node);
 }

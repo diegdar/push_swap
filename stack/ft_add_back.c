@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assign_index.c                                     :+:      :+:    :+:   */
+/*   add_back.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 18:00:46 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 18:00:49 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/14 17:59:23 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 19:20:51 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	assign_index(t_stack *stack)
+void	ft_add_back(t_stack **stack, t_stack *new)
 {
-	t_stack	*current;
-	t_stack	*runner;
-	int		index;
+	t_stack	*last;
 
-	current = stack;
-	while (current)
+	if (!stack || !new)
+		return ;
+	if (*stack == NULL)
 	{
-		index = 0;
-		runner = stack;
-		while (runner)
-		{
-			if (runner->value < current->value)
-				index++;
-			runner = runner->next;
-		}
-		current->index = index;
-		current = current->next;
+		*stack = new;
+		return ;
 	}
+	last = ft_last_node(*stack);
+	last->next = new;
 }

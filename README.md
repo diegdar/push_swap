@@ -20,7 +20,7 @@ Configura el modo de ejecución (--simple, --medium,--complex, --adaptive, --ben
                  │                                       │
                  └───────────────────┬───────────────────┘
                                      ▼
-                               build_stack()
+                               validate_value()
                                      │
               ┌──────────────────────┼──────────────────────┐
               ▼                      ▼                      ▼
@@ -32,7 +32,10 @@ Configura el modo de ejecución (--simple, --medium,--complex, --adaptive, --ben
                              └─────────────────┘
                                      │
                                      ▼
-                               create_node()
+                                build_stack()                                
+                                     │
+                                     ▼
+                                create_node()
                                      │
                                      ▼
                                 add_back()

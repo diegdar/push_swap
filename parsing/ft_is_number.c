@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   is_number.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 18:47:09 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 19:14:12 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/14 17:58:06 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 19:16:21 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	parsing(t_stack *stack, char *str, int *value)
+int	ft_is_number(char *str)
 {
-	long	n;
+	int	i;
 
-	if (!is_number(str))
-		return (1);
-	n = ft_atol(str);
-	if (n < INT_MIN || n > INT_MAX)
-		return (1);
-	if (has_duplicate(stack, (int)n))
-		return (1);
-	*value = (int)n;
-	return (0);
+	if (!str || *str == '\0')
+		return (0);
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
 }

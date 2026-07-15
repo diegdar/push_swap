@@ -37,36 +37,40 @@ typedef struct s_config
 
 /* PARSING */
 
-int	parse_flags(int argc, char **argv, t_config *config);
-int	parse_input(t_stack **stack, int argc, char **argv, int start);
-int	parsing(t_stack *stack, char *str, int *value);
-int	is_number(char *str);
-int	has_duplicate(t_stack *stack, int value);
+int	ft_parse_flags(int argc, char **argv, t_config *config);
+int	ft_parse_input(t_stack **stack, int argc, char **argv, int start);
+int     ft_build_stack(t_stack **stack, char **argv, int start);
+int	ft_validate_value(t_stack *stack, char *str, int *value);
+int	ft_is_number(char *str);
+int	ft_has_duplicate(t_stack *stack, int value);
 long	ft_atol(char *str);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	**ft_split(char const *s, char c);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s1);
 
 /* STACK */
 
-int     build_stack(t_stack **stack, char **argv, int start);
-t_stack *create_node(int value);
-t_stack *last_node(t_stack *stack);
-void    add_back(t_stack **stack, t_stack *new);
-void    free_stack(t_stack **stack);
-int     stack_size(t_stack *stack);
+t_stack *ft_create_node(int value);
+t_stack *ft_last_node(t_stack *stack);
+void    ft_add_back(t_stack **stack, t_stack *new);
+void    ft_free_stack(t_stack **stack);
+int     ft_stack_size(t_stack *stack);
 
 /* SORT */
 
-int     is_sorted(t_stack *stack);
-int     find_min(t_stack *stack);
-int     find_max(t_stack *stack);
-void    assign_index(t_stack *stack);
+int     ft_is_sorted(t_stack *stack);
+int     ft_find_min(t_stack *stack);
+int     ft_find_max(t_stack *stack);
+void    ft_assign_index(t_stack *stack);
 
 /* STRATEGY */
 
-double	compute_disorder(t_stack *stack);
+double	ft_compute_disorder(t_stack *stack);
+
+/* UTILS */
+
+int     ft_strcmp(char *s1, char *s2);
+char    *ft_substr(char const *s, unsigned int start, size_t len);
+char    **ft_split(char const *s, char c);
+size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t  ft_strlen(const char *s);
+char    *ft_strdup(const char *s1);
 
 #endif

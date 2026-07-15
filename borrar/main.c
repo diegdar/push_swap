@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 
 	printf("============= PARSE FLAGS =============\n");
 
-	start = parse_flags(argc, argv, &config);
+	start = ft_parse_flags(argc, argv, &config);
 
 	printf("bench : %d\n", config.bench);
 	printf("algo  : %s\n", config.algo);
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 
 	printf("============= PARSE INPUT =============\n");
 
-	if (parse_input(&stack_a, argc, argv, start))
+	if (ft_parse_input(&stack_a, argc, argv, start))
 		return (1);
 
 	printf("Parsing correcto.\n\n");
@@ -69,28 +69,28 @@ int	main(int argc, char **argv)
 
 	printf("============= STACK UTILS =============\n");
 
-	printf("Tamaño        : %d\n", stack_size(stack_a));
+	printf("Tamaño        : %d\n", ft_stack_size(stack_a));
 	printf("Ordenado      : %s\n",
-		is_sorted(stack_a) ? "SI" : "NO");
-	printf("Min           : %d\n", find_min(stack_a));
-	printf("Max           : %d\n\n", find_max(stack_a));
+		ft_is_sorted(stack_a) ? "SI" : "NO");
+	printf("Min           : %d\n", ft_find_min(stack_a));
+	printf("Max           : %d\n\n", ft_find_max(stack_a));
 
 	printf("============= DISORDER =============\n");
 
-	disorder = compute_disorder(stack_a);
+	disorder = ft_compute_disorder(stack_a);
 
 	printf("Disorder      : %.4f\n", disorder);
 	printf("Bench         : %.2f%%\n\n", disorder * 100.0);
 
 	printf("============= ASSIGN INDEX =============\n");
 
-	assign_index(stack_a);
+	ft_assign_index(stack_a);
 
 	print_stack_debug(stack_a, 'A');
 
 	printf("============= FREE STACK =============\n");
 
-	free_stack(&stack_a);
+	ft_free_stack(&stack_a);
 
 	printf("stack_a == NULL ? %s\n",
 		(stack_a == NULL) ? "SI" : "NO");

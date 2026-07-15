@@ -37,13 +37,3 @@ long	ft_atol(char *str)
 	}
 	return (result * sign);
 }
-
-/*#include <stdio.h>
-
-int main(void)
-{
-    char *test = "12345"; 
-
-    printf("%ld\n", ft_atol(test));
-    return (0);
-} */

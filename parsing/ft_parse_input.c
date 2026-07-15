@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-static void	free_split(char **split)
+static void	ft_free_split(char **split)
 {
 	int	i;
 
@@ -27,15 +27,15 @@ static void	free_split(char **split)
 	free(split);
 }
 
-static int	parse_error(t_stack **stack, char **split)
+static int	ft_parse_error(t_stack **stack, char **split)
 {
-	free_stack(stack);
-	free_split(split);
+	ft_free_stack(stack);
+	ft_free_split(split);
 	write(2, "Error\n", 6);
 	return (1);
 }
 
-int	parse_input(t_stack **stack, int argc, char **argv, int start)
+int	ft_parse_input(t_stack **stack, int argc, char **argv, int start)
 {
 	char	**split;
 
@@ -44,15 +44,15 @@ int	parse_input(t_stack **stack, int argc, char **argv, int start)
 	{
 		split = ft_split(argv[start], ' ');
 		if (!split || !split[0])
-			return (parse_error(stack, split));
-		if (build_stack(stack, split, 0))
-			return (parse_error(stack, split));
-		free_split(split);
+			return (ft_parse_error(stack, split));
+		if (ft_build_stack(stack, split, 0))
+			return (ft_parse_error(stack, split));
+		ft_free_split(split);
 	}
 	else
 	{
-		if (build_stack(stack, argv, start))
-			return (parse_error(stack, NULL));
+		if (ft_build_stack(stack, argv, start))
+			return (ft_parse_error(stack, NULL));
 	}
 	return (0);
 }

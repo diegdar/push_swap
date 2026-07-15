@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_node.c                                      :+:      :+:    :+:   */
+/*   stack_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 17:59:43 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 19:24:34 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/14 18:00:12 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 18:00:15 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*create_node(int value)
+int	ft_stack_size(t_stack *stack)
 {
-	t_stack	*node;
+	int	size;
 
-	node = malloc(sizeof(t_stack));
-	if (!node)
-		return (NULL);
-	node->value = value;
-	node->index = 0;
-	node->next = NULL;
-	return (node);
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }

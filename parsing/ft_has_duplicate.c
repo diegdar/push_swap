@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   build_stack.c                                      :+:      :+:    :+:   */
+/*   has_duplicate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/11 17:57:20 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 19:53:58 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/14 17:57:52 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 19:12:04 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	build_stack(t_stack **stack, char **argv, int start)
+int	ft_has_duplicate(t_stack *stack, int value)
 {
-	int			i;
-	int			value;
-	t_stack		*new;
-
-	i = start;
-	while (argv[i])
+	while (stack)
 	{
-		if (parsing(*stack, argv[i], &value))
+		if (stack->value == value)
 			return (1);
-		new = create_node(value);
-		if (!new)
-			return (1);
-		add_back(stack, new);
-		i++;
+		stack = stack->next;
 	}
 	return (0);
 }

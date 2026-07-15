@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_back.c                                         :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 17:59:23 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 19:20:51 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/14 18:47:09 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 19:14:12 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	add_back(t_stack **stack, t_stack *new)
+int	ft_validate_value(t_stack *stack, char *str, int *value)
 {
-	t_stack	*last;
+	long	n;
 
-	if (!stack || !new)
-		return ;
-	if (*stack == NULL)
-	{
-		*stack = new;
-		return ;
-	}
-	last = last_node(*stack);
-	last->next = new;
+	if (!ft_is_number(str))
+		return (1);
+	n = ft_atol(str);
+	if (n < INT_MIN || n > INT_MAX)
+		return (1);
+	if (ft_has_duplicate(stack, (int)n))
+		return (1);
+	*value = (int)n;
+	return (0);
 }

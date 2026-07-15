@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   last_node.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 18:01:38 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 18:01:41 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/14 17:59:58 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 19:24:58 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	is_sorted(t_stack *stack)
+t_stack	*ft_last_node(t_stack *stack)
 {
-	while (stack && stack->next)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
+	t_stack	*current;
+
+	current = stack;
+	if (!current)
+		return (NULL);
+	while (current->next)
+		current = current->next;
+	return (current);
 }

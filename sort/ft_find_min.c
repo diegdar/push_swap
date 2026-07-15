@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_size.c                                       :+:      :+:    :+:   */
+/*   find_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 18:00:12 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 18:00:15 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/14 18:01:25 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 18:01:28 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	stack_size(t_stack *stack)
+int	ft_find_min(t_stack *stack)
 {
-	int	size;
+	int	min;
 
-	size = 0;
+	if (!stack)
+		return (0);
+	min = stack->value;
 	while (stack)
 	{
-		size++;
+		if (stack->value < min)
+			min = stack->value;
 		stack = stack->next;
 	}
-	return (size);
+	return (min);
 }

@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-double	compute_disorder(t_stack *stack)
+double	ft_compute_disorder(t_stack *stack)
 {
 	int		size;
 	double	mistakes;
@@ -20,7 +20,7 @@ double	compute_disorder(t_stack *stack)
 	t_stack	*current_i;
 	t_stack	*current_j;
 
-	size = stack_size(stack);
+	size = ft_stack_size(stack);
 	if (size <= 1)
 		return (0.0);
 	mistakes = 0.0;
