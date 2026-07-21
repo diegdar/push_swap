@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 
 	start = ft_parse_flags(argc, argv, &config);
 
-	printf("bench : %d\n", config.bench);
+	printf("bench : %d\n", config.is_activated);
 	printf("algo  : %s\n", config.algo);
 	printf("start : %d\n\n", start);
 

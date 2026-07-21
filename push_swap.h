@@ -31,7 +31,7 @@ typedef struct s_stack
 
 typedef struct s_config
 {
-	int		bench;
+	int		is_activated;
 	char	*algo;
 }	t_config;
 
