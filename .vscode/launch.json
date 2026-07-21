@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations":
+    [
+        {
+            "name": "Debug push_swap",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/push_swap",
+            "args":
+            [
+                "3",
+                "2",
+                "1"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "internalConsoleOptions": "neverOpen",            
+            "preLaunchTask": "Build push_swap",
+            "logging": {
+                "engineLogging": true,
+                "trace": true,
+                "traceResponse": true
+            }
+        }
+    ]
+}

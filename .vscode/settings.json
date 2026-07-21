@@ -1,0 +1,11 @@
+{
+    "terminal.integrated.defaultProfile.windows": "WSL",
+    "terminal.integrated.profiles.windows": {
+        "WSL": {
+            "path": "C:\\WINDOWS\\System32\\wsl.exe",
+            "args": ["~", "-e", "bash"]
+        }
+    },
+    "workbench.editor.enablePreview": false,
+    "debug.internalConsoleOptions": "neverOpen"
+}
