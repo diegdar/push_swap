@@ -10,10 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
+NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 SRC = \
 	borrar/main.c \
@@ -43,8 +43,6 @@ SRC = \
 
 OBJ = $(SRC:.c=.o)
 
-.PHONY: all clean fclean re
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -57,3 +55,15 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+#--- COMPILACION EJECUTABLE CON MAIN, PARAMETROS PERO SIN FLAGS
+test: $(NAME)
+	./$(NAME) 3 2 1
+	@echo "✨ ¡Test compilado!"
+
+# --- REGLA PARA DEBUGAR CON GDB ---
+debug: $(NAME)
+	gdb -ex "source borrar/.gdbinit" --args ./$(NAME) 3 2 1
+	@echo "🐛 Compilado en modo DEBUG con GDB."
+
+.PHONY: all clean fclean re test debug		
