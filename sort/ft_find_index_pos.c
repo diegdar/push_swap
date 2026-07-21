@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_find_index_pos.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 17:58:26 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/21 17:38:31 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/21 19:18:28 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/21 19:20:03 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_find_index_pos(t_stack *stack, int index)
 {
-	int	i;
+	int	position;
 
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	position = 0;
+	while (stack)
+	{
+		if (stack->index == index)
+			return (position);
+		position++;
+		stack = stack->next;
+	}
+	return (-1);
 }

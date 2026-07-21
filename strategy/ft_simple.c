@@ -6,7 +6,7 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 18:38:53 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/18 18:41:11 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/21 19:29:32 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_simple(t_stack **a, t_stack **b)
 	else if (size == 3)
 		ft_sort_three(a);
 	else
-		ft_sort_five(a, b);
+		ft_sort_small(a, b);
 }

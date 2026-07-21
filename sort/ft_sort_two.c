@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_sort_two.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 17:58:26 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/21 17:38:31 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/21 17:50:16 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/21 17:55:57 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_sort_two(t_stack **a)
 {
-	int	i;
-
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	if ((*a)->index > (*a)->next->index)
+		sa(a);
 }

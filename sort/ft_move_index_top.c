@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_move_min_top.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 17:58:26 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/21 17:38:31 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/21 19:04:15 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/21 19:26:29 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
+void	ft_move_index_top(t_stack **a, int index);
 
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+{
+	int	position;
+	int	size;
+	int	rotations;
+
+	position = ft_find_index_pos(*a, index);
+	size = ft_stack_size(*a);
+	if (position <= size / 2)
+	{
+		while (position > 0)
+		{
+			ra(a);
+			position--;
+		}
+	}
+	else
+	{
+		rotations = size - position;
+		while (rotations > 0)
+		{
+			rra(a);
+			rotations--;
+		}
+	}
 }
