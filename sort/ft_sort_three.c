@@ -6,13 +6,13 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 17:52:04 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/21 18:48:56 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/22 19:25:46 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sort_three(t_stack **a)
+void	ft_sort_three(t_stack **a, t_counter *counter)
 {
 	int	first;
 	int	second;
@@ -24,19 +24,19 @@ void	ft_sort_three(t_stack **a)
 	if (first < second && second < third)
 		return ;
 	if (first > second && second < third && first < third)
-		sa(a);
+		ft_sa(a, counter);
 	else if (first > second && second < third && first > third)
-		ra(a);
+		ft_ra(a, counter);
 	else if (first > second && second > third)
 	{
-		ra(a);
-		sa(a);
+		ft_ra(a, counter);
+		ft_sa(a, counter);
 	}
 	else if (first < second && second > third && first < third)
 	{
-		rra(a);
-		sa(a);
+		ft_rra(a, counter);
+		ft_sa(a, counter);
 	}
 	else if (first < second && second > third && first > third)
-		rra(a);
+		ft_rra(a, counter);
 }

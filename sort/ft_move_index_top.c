@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_move_min_top.c                                  :+:      :+:    :+:   */
+/*   ft_move_index_top.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 19:04:15 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/21 19:26:29 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/22 19:27:37 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_move_index_top(t_stack **a, int index);
+void	ft_move_index_top(t_stack **a, int index, t_counter *counter);
 
 {
 	int	position;
@@ -25,7 +25,7 @@ void	ft_move_index_top(t_stack **a, int index);
 	{
 		while (position > 0)
 		{
-			ra(a);
+			ft_ra(a, counter);
 			position--;
 		}
 	}
@@ -34,7 +34,7 @@ void	ft_move_index_top(t_stack **a, int index);
 		rotations = size - position;
 		while (rotations > 0)
 		{
-			rra(a);
+			ft_rra(a, counter);
 			rotations--;
 		}
 	}

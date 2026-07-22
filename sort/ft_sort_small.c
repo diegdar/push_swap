@@ -6,13 +6,13 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 19:21:25 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/21 19:22:33 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/22 19:23:35 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sort_small(t_stack **a, t_stack **b)
+void	ft_sort_small(t_stack **a, t_stack **b, t_counter *counter)
 {
 	int	size;
 	int	index;
@@ -21,12 +21,12 @@ void	ft_sort_small(t_stack **a, t_stack **b)
 	index = 0;
 	while (size > 3)
 	{
-		ft_move_index_top(a, index);
-		pb(a, b);
+		ft_move_index_top(a, index, counter);
+		ft_pb(a, b, counter);
 		index++;
 		size--;
 	}
-	ft_sort_three(a);
+	ft_sort_three(a, counter);
 	while (*b)
-		pa(a, b);
+		ft_pa(a, b, counter);
 }

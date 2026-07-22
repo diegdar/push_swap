@@ -6,7 +6,7 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:57:00 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 19:50:50 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/22 19:47:41 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_config
 {
 	int		bench;
 	char	*algo;
+	int	start;
+	double	disorder;
 }	t_config;
 
 /* PARSING */

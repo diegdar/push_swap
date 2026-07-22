@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_two.c                                      :+:      :+:    :+:   */
+/*   ft_find_position.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/21 17:50:16 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/22 19:24:19 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/22 20:08:25 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/22 20:09:31 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sort_two(t_stack **a, t_counter *counter)
+int	ft_find_position(t_stack *stack, int index)
 {
-	if ((*a)->index > (*a)->next->index)
-		ft_sa(a, counter);
+	int	position;
+
+	position = 0;
+	while (stack)
+	{
+		if (stack->index == index)
+			return (position);
+		position++;
+		stack = stack->next;
+	}
+	return (-1);
 }
