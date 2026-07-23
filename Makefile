@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/14 19:35:12 by andrcarr          #+#    #+#              #
-#    Updated: 2026/07/14 19:35:25 by andrcarr         ###   ########.fr        #
+#    Updated: 2026/07/23 16:29:14 by dichacon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,10 @@ SRC = \
 	utils/ft_strcmp.c \
 	utils/ft_strlen.c \
 	utils/ft_strlcpy.c \
-	utils/ft_substr.c
+	utils/ft_substr.c \
+	utils/ft_memset.c \
+	utils/operations_utils.c \
+	operations/swap.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -57,13 +60,13 @@ fclean: clean
 re: fclean all
 
 #--- COMPILACION EJECUTABLE CON MAIN, PARAMETROS PERO SIN FLAGS
-test: $(NAME)
+test: re
 	./$(NAME) 3 2 1
-	@echo "✨ ¡Test compilado!"
+	@echo "\n✨ ¡Test compilado!"
 
 # --- REGLA PARA DEBUGAR CON GDB ---
-debug: $(NAME)
+debug: re
 	gdb -ex "source borrar/.gdbinit" --args ./$(NAME) 3 2 1
-	@echo "🐛 Compilado en modo DEBUG con GDB."
+	@echo "\n🐛 Compilado en modo DEBUG con GDB."
 
 .PHONY: all clean fclean re test debug		
