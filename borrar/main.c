@@ -6,7 +6,7 @@
 /*   By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 19:32:01 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/23 17:47:09 by dichacon         ###   ########.fr       */
+/*   Updated: 2026/07/23 21:48:31 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	print_stack_debug(t_stack *stack, char name)
 	while (stack)
 	{
 		printf("[Dir: %p | Value: %5d | Index: %2d] -> Next: %p\n",
-			(void *)stack,
+			stack,
 			stack->value,
 			stack->index,
-			(void *)stack->next);
+			stack->next);
 		stack = stack->next;
 	}
 	printf("------------------\n\n");
@@ -94,30 +94,44 @@ int	main(int argc, char **argv)
 
 	print_stack_debug(stack_a, 'A');
 
-	printf("============= FREE STACK =============\n");
-
-	//ft_free_stack(&stack_a);
-
-	//printf("stack_a == NULL ? %s\n", (stack_a == NULL) ? "SI" : "NO");
-
 	printf("============= PRINT OPERATIONS =============\n");
 	ft_memset(&counter, 0, sizeof(t_counter));
 	//SWAP
-	printf("\n-- Impresion de 'sa' ---");
-	printf("\n>Before movement: \n\t*1st node: %p, \n\t*2nd node: %p", (void *)stack_a, (void *)stack_a->next);
+	printf("\n-- Impresion de 'sa' ---\n");
+	printf(">>Before movement>>\n");
+	print_stack_debug(stack_a, 'A');	
 	ft_sa(&stack_a, &counter);
-	printf("\n>After movement: \n\t*1st node: %p, \n\t*2nd node: %p", (void *)stack_a, (void *)stack_a->next);
+	printf(">>After movement>>\n");
+	print_stack_debug(stack_a, 'A');	
 	//PUSH
-	printf("\n\n-- Impresion de 'pb' ---\n");
-	if (stack_b)
-		printf(">Before movement: \n\t*value of 1st node in stack A: %d \n\t*value of 1st node in stack B: %d\n", stack_a->value, stack_b->value);
-	else
-		printf(">Before movement: \n\t*value of 1st node in stack A: %d \n\t*value of 1st node in stack B: (nil)\n", stack_a->value);
+	printf("\n\n\n-- Impresion de 'pb' ---\n");
+	printf(">>Before movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');
 	ft_pb(&stack_a, &stack_b, &counter);
-	if (stack_a)
-		printf(">After movement: \n\t*value of 1st node in stack A: %d, \n\t*value of 1st node in stack B: %d\n", stack_a->value, stack_b->value);
-	else
-		printf(">After movement: \n\t*value of 1st node in stack A:(nil), \n\t*value of 1st node in stack B: %d\n", stack_b->value);
-	
+	printf(">>After movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');	
+	// ROTATE
+	// Impresion de 'ra'
+	printf("\n\n\n-- Impresion de 'ra' ---\n");
+	printf(">>Before movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	ft_ra(&stack_a, &counter);
+	printf(">>After movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	// Impresion de 'rr'
+	printf("\n\n\n-- Impresion de 'rr' ---\n");
+	printf(">>Before movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');
+	ft_rr(&stack_a, &stack_b, &counter);
+	printf(">>After movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');	
+
+	printf("============= FREE STACK =============\n");
+	ft_free_stack(&stack_a);
+	printf("stack_a == NULL ? %s\n", (stack_a == NULL) ? "SI" : "NO");	
 	return (0);
 }

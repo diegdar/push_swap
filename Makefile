@@ -6,7 +6,7 @@
 #    By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/14 19:35:12 by andrcarr          #+#    #+#              #
-#    Updated: 2026/07/23 17:13:39 by dichacon         ###   ########.fr        #
+#    Updated: 2026/07/23 21:30:52 by dichacon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC = \
 	parsing/ft_parse_input.c \
 	parsing/ft_validate_value.c \
 	stack/ft_add_back.c \
+	stack/ft_add_front.c \
 	parsing/ft_build_stack.c \
 	stack/ft_create_node.c \
 	stack/ft_free_stack.c \
@@ -44,6 +45,8 @@ SRC = \
 	utils/operations_utils.c \
 	operations/swap.c \
 	operations/push.c \
+	operations/rotate.c \
+
 
 OBJ = $(SRC:.c=.o)
 
@@ -62,12 +65,12 @@ re: fclean all
 
 #--- COMPILACION EJECUTABLE CON MAIN, PARAMETROS PERO SIN FLAGS
 test: re
-	./$(NAME) 3 2 1
+	./$(NAME) 5 4 3 2 1
 	@echo "\n✨ ¡Test compilado!"
 
 # --- REGLA PARA DEBUGAR CON GDB ---
 debug: re
-	gdb -ex "source borrar/.gdbinit" --args ./$(NAME) 3 2 1
+	gdb -ex "source borrar/.gdbinit" --args ./$(NAME) 5 4 3 2 1
 	@echo "\n🐛 Compilado en modo DEBUG con GDB."
 
 .PHONY: all clean fclean re test debug		

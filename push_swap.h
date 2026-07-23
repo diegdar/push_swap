@@ -6,7 +6,7 @@
 /*   By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:57:00 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/23 17:12:18 by dichacon         ###   ########.fr       */
+/*   Updated: 2026/07/23 19:30:23 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ t_stack *ft_last_node(t_stack *stack);
 void    ft_add_back(t_stack **stack, t_stack *new);
 void    ft_free_stack(t_stack **stack);
 int     ft_stack_size(t_stack *stack);
+void	ft_add_front(t_stack **stack, t_stack *new);
 
 /* SORT */
 
@@ -100,5 +101,10 @@ void	ft_ss(t_stack **a, t_stack **b, t_counter *counter);
 // PUSH
 void	ft_pa(t_stack **a, t_stack **b, t_counter *counter);
 void	ft_pb(t_stack **a, t_stack **b, t_counter *counter);
+// ROTATE
+void	ft_ra(t_stack **a, t_counter *counter);
+void	ft_rb(t_stack **b, t_counter *counter);
+void	ft_rr(t_stack **a, t_stack **b, t_counter *counter);
+
 
 #endif

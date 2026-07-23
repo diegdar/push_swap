@@ -9,6 +9,8 @@
             "program": "${workspaceFolder}/push_swap",
             "args":
             [
+                "5",
+                "4",
                 "3",
                 "2",
                 "1"
