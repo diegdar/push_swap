@@ -5,10 +5,9 @@
             "label": "Build push_swap",
             "type": "shell",
             "command": "make",
-            "group":
-            {
+            "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             },
             "problemMatcher": [
                 "$gcc"
@@ -17,7 +16,7 @@
                 "reveal": "never",
                 "focus": false,
                 "panel": "shared"
-            }            
-        }
+            }
+        },
     ]
 }
