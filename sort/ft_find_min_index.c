@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_simple.c                                        :+:      :+:    :+:   */
+/*   find_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/18 18:38:53 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/22 19:22:03 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/14 18:01:25 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/14 18:01:28 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_simple(t_stack **a, t_stack **b, t_counter *counter)
+int	ft_find_min_index(t_stack *stack)
 {
-	int	size;
+	int	min;
 
-	size = ft_stack_size(*a);
-	if (size == 2)
-		ft_sort_two(a, counter);
-	else if (size == 3)
-		ft_sort_three(a, counter);
-	else
-		ft_sort_small(a, b, counter);
+	if (!stack)
+		return (0);
+	min = stack->index;
+	while (stack)
+	{
+		if (stack->index < min)
+			min = stack->index;
+		stack = stack->next;
+	}
+	return (min);
 }

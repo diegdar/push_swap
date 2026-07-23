@@ -32,10 +32,26 @@ typedef struct s_stack
 typedef struct s_config
 {
 	int		bench;
-	char	*algo;
+	t_algorithm	*algo;
 	int	start;
 	double	disorder;
 }	t_config;
+
+typedef enum e_algorithm
+{
+	AUTO,
+	SIMPLE,
+	CHUNK,
+	RADIX
+}	t_algorithm;
+
+/* POSICIÓN CHUNK */
+
+typedef struct s_move
+{
+        int	from top;
+        int	from_bottom;
+}       t_move;
 
 /* PARSING */
 
