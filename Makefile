@@ -6,7 +6,7 @@
 #    By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/14 19:35:12 by andrcarr          #+#    #+#              #
-#    Updated: 2026/07/23 16:29:14 by dichacon         ###   ########.fr        #
+#    Updated: 2026/07/23 17:13:39 by dichacon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC = \
 	utils/ft_memset.c \
 	utils/operations_utils.c \
 	operations/swap.c \
+	operations/push.c \
 
 OBJ = $(SRC:.c=.o)
 

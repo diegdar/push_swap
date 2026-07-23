@@ -6,7 +6,7 @@
 /*   By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 19:32:01 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/23 16:25:40 by dichacon         ###   ########.fr       */
+/*   Updated: 2026/07/23 17:47:09 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@ void	print_stack_debug(t_stack *stack, char name)
 int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
+	t_stack		*stack_b;
 	t_counter	counter;
 	t_config	config;
 	int			start;
 	double		disorder;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	if (argc < 2)
 	{
 		printf("Uso: ./a.out [flags] numeros\n");
@@ -102,9 +104,20 @@ int	main(int argc, char **argv)
 	ft_memset(&counter, 0, sizeof(t_counter));
 	//SWAP
 	printf("\n-- Impresion de 'sa' ---");
-	printf("\nBefore movement: 1st node: %p, 2nd node: %p", (void *)stack_a, (void *)stack_a->next);
+	printf("\n>Before movement: \n\t*1st node: %p, \n\t*2nd node: %p", (void *)stack_a, (void *)stack_a->next);
 	ft_sa(&stack_a, &counter);
-	printf("\nAfter movement: 1st node: %p, 2nd node: %p", (void *)stack_a, (void *)stack_a->next);
-
+	printf("\n>After movement: \n\t*1st node: %p, \n\t*2nd node: %p", (void *)stack_a, (void *)stack_a->next);
+	//PUSH
+	printf("\n\n-- Impresion de 'pb' ---\n");
+	if (stack_b)
+		printf(">Before movement: \n\t*value of 1st node in stack A: %d \n\t*value of 1st node in stack B: %d\n", stack_a->value, stack_b->value);
+	else
+		printf(">Before movement: \n\t*value of 1st node in stack A: %d \n\t*value of 1st node in stack B: (nil)\n", stack_a->value);
+	ft_pb(&stack_a, &stack_b, &counter);
+	if (stack_a)
+		printf(">After movement: \n\t*value of 1st node in stack A: %d, \n\t*value of 1st node in stack B: %d\n", stack_a->value, stack_b->value);
+	else
+		printf(">After movement: \n\t*value of 1st node in stack A:(nil), \n\t*value of 1st node in stack B: %d\n", stack_b->value);
+	
 	return (0);
 }

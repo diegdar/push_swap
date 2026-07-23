@@ -6,7 +6,7 @@
 /*   By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:57:00 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/23 16:28:39 by dichacon         ###   ########.fr       */
+/*   Updated: 2026/07/23 17:12:18 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,8 @@ int	is_op_validate(t_stack **stack, t_counter *counter);
 void	ft_sa(t_stack **a, t_counter *counter);
 void	ft_sb(t_stack **b, t_counter *counter);
 void	ft_ss(t_stack **a, t_stack **b, t_counter *counter);
+// PUSH
+void	ft_pa(t_stack **a, t_stack **b, t_counter *counter);
+void	ft_pb(t_stack **a, t_stack **b, t_counter *counter);
 
 #endif
