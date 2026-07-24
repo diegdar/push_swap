@@ -1,15 +1,15 @@
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	ft_chunk_position(t_stack *stack, int limit)
 {
-	t_move	pos;
+	t_position	pos;
 	int	i;
 	int	size;
 
 	size = ft_stack_size(stack);
 	
-	move.from_top = -1;
-	move.from_bottom = -1;
+	pos.from_top = -1;
+	pos.from_bottom = -1;
 
 	i = 0;
 	while (stack)

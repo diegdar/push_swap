@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 void	ft_chunks_push(t_stack **a, t_stack **b, t_counter *counter)
 {
@@ -14,7 +14,7 @@ void	ft_chunks_push(t_stack **a, t_stack **b, t_counter *counter)
 		if ((*a)->index <= limit)
 		{
 			ft_pb(a, b, counter);
-			if (*b && (*b)->index < middle)
+			if (*b && (*b)->index <= middle)
 				ft_rb(b, counter);
 			limit++;
 		}

@@ -12,17 +12,26 @@
 
 #include "../push_swap.h"
 
-int	ft_find_position(t_stack *stack, int index)
+t_position	ft_find_position(t_stack *stack, int index)
 {
-	int	position;
+	t_position	pos;
+	int			size;
+	int			i;
 
-	position = 0;
+	size = ft_stack_size(stack);
+	pos.from_top = -1;
+	pos.from_bottom = -1;
+	i = 0;
 	while (stack)
 	{
 		if (stack->index == index)
-			return (position);
-		position++;
+		{
+			pos.from_top = i;
+			pos.from_bottom = size - i - 1;
+			break ;
+		}
+		i++;
 		stack = stack->next;
 	}
-	return (-1);
+i	return (pos);
 }

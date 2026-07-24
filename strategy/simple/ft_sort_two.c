@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_max.c                                         :+:      :+:    :+:   */
+/*   ft_sort_two.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 18:01:03 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 18:01:06 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/21 17:50:16 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/22 19:24:19 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-int	ft_find_max(t_stack *stack)
+void	ft_sort_two(t_stack **a, t_counter *counter)
 {
-	int	max;
-
-	if (!stack)
-		return (0);
-	max = stack->value;
-	while (stack)
-	{
-		if (stack->value > max)
-			max = stack->value;
-		stack = stack->next;
-	}
-	return (max);
+	if ((*a)->index > (*a)->next->index)
+		ft_sa(a, counter);
 }

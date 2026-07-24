@@ -3,12 +3,10 @@
 void	ft_rotate_to_top(t_stack **stack, int index,
 			char stack_name, t_counter *counter)
 {
-	int	position;
-	int	size;
+	t_position	pos;
 
-	position = ft_find_position(*stack, index);
-	size = ft_stack_size(*stack);
-	if (position <= size / 2)
+	pos = ft_find_position(*stack, index);
+	if (pos.from_top <= pos.from_bottom)
 	{
 		while ((*stack)->index != index)
 		{

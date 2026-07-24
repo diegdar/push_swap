@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 void	ft_medium(t_stack **a, t_stack **b, t_counter *counter)
 {

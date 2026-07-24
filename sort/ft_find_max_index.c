@@ -4,6 +4,8 @@ int	ft_find_max_index(t_stack *stack)
 {
 	int	max;
 
+	if (!stack)
+		return (0);
 	max = stack->index;
 	while (stack)
 	{

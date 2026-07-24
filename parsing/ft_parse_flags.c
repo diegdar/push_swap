@@ -18,23 +18,44 @@ int	ft_parse_flags(int argc, char **argv, t_config *config)
 
 	i = 1;
 	config->bench = 0;
-	config->algo = "adaptive";
+	config->algo = ADAPTIVE;
 	while (i < argc)
 	{
 		if (ft_strcmp(argv[i], "--bench") == 0)
+		{
+			if (config->bench)
+				return (1);
 			config->bench = 1;
+		}
 		else if (ft_strcmp(argv[i], "--simple") == 0)
-			config->algo = "simple";
+		{
+			if (config->algo != ADAPTIVE)
+				return (1);
+			config->algo = SIMPLE;
+		}
 		else if (ft_strcmp(argv[i], "--medium") == 0)
-			config->algo = "medium";
+		{
+			if (config->algo != ADAPTIVE)
+				return (1);
+			config->algo = MEDIUM;
+		}
 		else if (ft_strcmp(argv[i], "--complex") == 0)
-			config->algo = "complex";
+		{
+			if (config->algo != ADAPTIVE)
+				return (1);
+			config->algo = COMPLEX;
+		}
 		else if (ft_strcmp(argv[i], "--adaptive") == 0)
-			config->algo = "adaptive";
+		{
+			if (config->algo != ADAPTIVE)
+				return (1);
+		}
 		else
 			break ;
 		i++;
 	}
 	config->start = i;
+	if (config->start >= argc)
+		return (1);
 	return (0);
 }

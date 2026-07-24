@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_index_pos.c                                :+:      :+:    :+:   */
+/*   ft_sort_small.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/21 19:18:28 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/21 19:20:03 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/21 19:21:25 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/22 19:23:35 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-int	ft_find_index_pos(t_stack *stack, int index)
+void	ft_sort_five(t_stack **a, t_stack **b, t_counter *counter)
 {
-	int	position;
+	int	size;
+	int	index;
 
-	position = 0;
-	while (stack)
+	size = ft_stack_size(*a);
+	index = 0;
+	while (size > 3)
 	{
-		if (stack->index == index)
-			return (position);
-		position++;
-		stack = stack->next;
+		ft_move_index_top(a, index, counter);
+		ft_pb(a, b, counter);
+		index++;
+		size--;
 	}
-	return (-1);
+	ft_sort_three(a, counter);
+	while (*b)
+		ft_pa(a, b, counter);
 }
