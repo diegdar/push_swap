@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:57:00 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/14 19:50:50 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/24 16:22:14 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,31 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
+	int				count;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct s_counter
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;	
+	int	rra;
+	int	rrb;
+	int	rrr;
+	int	total;		
+} t_counter;
 
 /* FLAGS */
 
 typedef struct s_config
 {
-	int		bench;
+	int		is_bench;
 	char	*algo;
 }	t_config;
 
@@ -52,6 +69,7 @@ t_stack *ft_last_node(t_stack *stack);
 void    ft_add_back(t_stack **stack, t_stack *new);
 void    ft_free_stack(t_stack **stack);
 int     ft_stack_size(t_stack *stack);
+void	ft_add_front(t_stack **stack, t_stack *new);
 
 /* SORT */
 
@@ -72,5 +90,25 @@ char    **ft_split(char const *s, char c);
 size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t  ft_strlen(const char *s);
 char    *ft_strdup(const char *s1);
+void	*ft_memset(void *s, int c, size_t n);
+
+/* OPERATIONS */
+int	is_op_validate(t_stack **stack, t_counter *counter);
+//SWAP
+void	ft_sa(t_stack **a, t_counter *counter);
+void	ft_sb(t_stack **b, t_counter *counter);
+void	ft_ss(t_stack **a, t_stack **b, t_counter *counter);
+// PUSH
+void	ft_pa(t_stack **a, t_stack **b, t_counter *counter);
+void	ft_pb(t_stack **a, t_stack **b, t_counter *counter);
+// ROTATE
+void	ft_ra(t_stack **a, t_counter *counter);
+void	ft_rb(t_stack **b, t_counter *counter);
+void	ft_rr(t_stack **a, t_stack **b, t_counter *counter);
+// REVERSE_ROTATE
+void	ft_rra(t_stack **a, t_counter *counter);
+void	ft_rrb(t_stack **a, t_counter *counter);
+void	ft_rrr(t_stack **a, t_stack **b, t_counter *counter);
+
 
 #endif

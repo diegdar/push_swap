@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build push_swap",
+            "type": "shell",
+            "command": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+    ]
+}

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_validate_value.c                                :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dichacon <dichacon@student.42barcelona.com>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 18:47:09 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/18 17:43:12 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/05/04 17:12:54 by dichacon          #+#    #+#             */
+/*   Updated: 2026/05/04 21:12:00 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../push_swap.h"
 
-int	ft_validate_value(t_stack *stack, char *str, int *value)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	long	n;
+	size_t			i;
+	unsigned char	*ptr;
+	unsigned char	value;
 
-	if (!ft_is_number(str))
-		return (1);
-	n = ft_atol(str);
-	if (n < INT_MIN || n > INT_MAX)
-		return (1);
-	if (ft_has_duplicate(stack, (int)n))
-		return (1);
-	*value = (int)n;
-	return (0);
+	if (!s)
+		return (s);
+	i = 0;
+	ptr = (unsigned char *)s;
+	value = (unsigned char)c;
+	while (i < n)
+	{
+		ptr[i] = value;
+		i++;
+	}
+	return (s);
 }

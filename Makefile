@@ -1,19 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/14 19:35:12 by andrcarr          #+#    #+#              #
-#    Updated: 2026/07/14 19:35:25 by andrcarr         ###   ########.fr        #
+#    Updated: 2026/07/24 16:27:15 by dichacon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
+NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 SRC = \
 	borrar/main.c \
@@ -24,6 +24,7 @@ SRC = \
 	parsing/ft_parse_input.c \
 	parsing/ft_validate_value.c \
 	stack/ft_add_back.c \
+	stack/ft_add_front.c \
 	parsing/ft_build_stack.c \
 	stack/ft_create_node.c \
 	stack/ft_free_stack.c \
@@ -39,11 +40,15 @@ SRC = \
 	utils/ft_strcmp.c \
 	utils/ft_strlen.c \
 	utils/ft_strlcpy.c \
-	utils/ft_substr.c
+	utils/ft_substr.c \
+	utils/ft_memset.c \
+	utils/operations_utils.c \
+	operations/swap.c \
+	operations/push.c \
+	operations/rotate.c \
+	operations/reverse_rotate.c \
 
 OBJ = $(SRC:.c=.o)
-
-.PHONY: all clean fclean re
 
 all: $(NAME)
 
@@ -57,3 +62,15 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+#--- COMPILACION EJECUTABLE CON MAIN, PARAMETROS PERO SIN FLAGS
+test: re
+	./$(NAME) 6 5 4 3 2 1
+	@echo "\n✨ ¡Test compilado!"
+
+# --- REGLA PARA DEBUGAR CON GDB ---
+debug: re
+	gdb -ex "source borrar/.gdbinit" --args ./$(NAME) 5 4 3 2 1
+	@echo "\n🐛 Compilado en modo DEBUG con GDB."
+
+.PHONY: all clean fclean re test debug		

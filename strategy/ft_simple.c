@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_validate_value.c                                :+:      :+:    :+:   */
+/*   ft_simple.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/14 18:47:09 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/18 17:43:12 by andrcarr         ###   ########.fr       */
+/*   Created: 2026/07/18 18:38:53 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/18 18:41:11 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_validate_value(t_stack *stack, char *str, int *value)
+void	ft_simple(t_stack **a, t_stack **b)
 {
-	long	n;
+	int	size;
 
-	if (!ft_is_number(str))
-		return (1);
-	n = ft_atol(str);
-	if (n < INT_MIN || n > INT_MAX)
-		return (1);
-	if (ft_has_duplicate(stack, (int)n))
-		return (1);
-	*value = (int)n;
-	return (0);
+	size = ft_stack_size(*a);
+	if (size == 2)
+		ft_sort_two(a);
+	else if (size == 3)
+		ft_sort_three(a);
+	else
+		ft_sort_five(a, b);
 }
