@@ -6,7 +6,7 @@
 /*   By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:57:00 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/23 19:30:23 by dichacon         ###   ########.fr       */
+/*   Updated: 2026/07/24 16:22:14 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,10 @@ void	ft_pb(t_stack **a, t_stack **b, t_counter *counter);
 void	ft_ra(t_stack **a, t_counter *counter);
 void	ft_rb(t_stack **b, t_counter *counter);
 void	ft_rr(t_stack **a, t_stack **b, t_counter *counter);
+// REVERSE_ROTATE
+void	ft_rra(t_stack **a, t_counter *counter);
+void	ft_rrb(t_stack **a, t_counter *counter);
+void	ft_rrr(t_stack **a, t_stack **b, t_counter *counter);
 
 
 #endif

@@ -6,7 +6,7 @@
 #    By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/14 19:35:12 by andrcarr          #+#    #+#              #
-#    Updated: 2026/07/23 21:30:52 by dichacon         ###   ########.fr        #
+#    Updated: 2026/07/24 16:27:15 by dichacon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ SRC = \
 	operations/swap.c \
 	operations/push.c \
 	operations/rotate.c \
-
+	operations/reverse_rotate.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -65,7 +65,7 @@ re: fclean all
 
 #--- COMPILACION EJECUTABLE CON MAIN, PARAMETROS PERO SIN FLAGS
 test: re
-	./$(NAME) 5 4 3 2 1
+	./$(NAME) 6 5 4 3 2 1
 	@echo "\n✨ ¡Test compilado!"
 
 # --- REGLA PARA DEBUGAR CON GDB ---

@@ -6,7 +6,7 @@
 /*   By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 19:32:01 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/23 21:48:31 by dichacon         ###   ########.fr       */
+/*   Updated: 2026/07/24 16:38:04 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,39 +97,80 @@ int	main(int argc, char **argv)
 	printf("============= PRINT OPERATIONS =============\n");
 	ft_memset(&counter, 0, sizeof(t_counter));
 	//SWAP
+	printf("\n>>>>>>>>>> SWAP >>>>>>>>>>>>>>>>>>>>>\n");	
 	printf("\n-- Impresion de 'sa' ---\n");
-	printf(">>Before movement>>\n");
+	printf(">\fore movement>>\n");
 	print_stack_debug(stack_a, 'A');	
 	ft_sa(&stack_a, &counter);
 	printf(">>After movement>>\n");
 	print_stack_debug(stack_a, 'A');	
 	//PUSH
-	printf("\n\n\n-- Impresion de 'pb' ---\n");
-	printf(">>Before movement>>\n");
+	printf("\n>>>>>>>>>> PUSH >>>>>>>>>>>>>>>>>>>>>\n");	
+	printf("\n\n-- Impresion de 'pb' ---\n");
+	printf(">\fore movement>>\n");
 	print_stack_debug(stack_a, 'A');
 	print_stack_debug(stack_b, 'B');
 	ft_pb(&stack_a, &stack_b, &counter);
-	printf(">>After movement>>\n");
+	ft_pb(&stack_a, &stack_b, &counter);
+	ft_pb(&stack_a, &stack_b, &counter);
+	printf(">>After movements>>\n");
 	print_stack_debug(stack_a, 'A');
 	print_stack_debug(stack_b, 'B');	
 	// ROTATE
+	printf("\n>>>>>>>>>> ROTATE >>>>>>>>>>>>>>>>>>>>>\n");
 	// Impresion de 'ra'
-	printf("\n\n\n-- Impresion de 'ra' ---\n");
+	printf("\n-- Impresion de 'ra' ---\n");
 	printf(">>Before movement>>\n");
 	print_stack_debug(stack_a, 'A');
 	ft_ra(&stack_a, &counter);
 	printf(">>After movement>>\n");
 	print_stack_debug(stack_a, 'A');
+	// Impresion de 'rb'
+	printf("\n\n-- Impresion de 'rb' ---\n");
+	printf(">>Before movement>>\n");
+	print_stack_debug(stack_b, 'B');
+	ft_rb(&stack_b, &counter);
+	printf(">>After movement>>\n");
+	print_stack_debug(stack_b, 'B');
 	// Impresion de 'rr'
-	printf("\n\n\n-- Impresion de 'rr' ---\n");
+	printf("\n\n-- Impresion de 'rr' ---\n");
 	printf(">>Before movement>>\n");
 	print_stack_debug(stack_a, 'A');
 	print_stack_debug(stack_b, 'B');
 	ft_rr(&stack_a, &stack_b, &counter);
 	printf(">>After movement>>\n");
 	print_stack_debug(stack_a, 'A');
-	print_stack_debug(stack_b, 'B');	
-
+	print_stack_debug(stack_b, 'B');
+	// REVERSE_ROTATE
+	printf("\n>>>>>>>>>> REVERSER_ROTATE >>>>>>>>>>>>>>>>>>>>>\n");	
+	// Impresion de 'rra'
+	printf("\n-- Impresion de 'rra' ---\n");
+	printf(">>Before movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');
+	ft_rra(&stack_a, &counter);
+	printf(">>After movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');
+	// Impresion de 'rrb'
+	printf("\n\n-- Impresion de 'rrb' ---\n");
+	printf(">>Before movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');
+	ft_rrb(&stack_b, &counter);
+	printf(">>After movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');
+	// Impresion de 'rrr'
+	printf("\n\n-- Impresion de 'rrr' ---\n");
+	printf(">>Before movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');
+	ft_rrr(&stack_a, &stack_b, &counter);
+	printf(">>After movement>>\n");
+	print_stack_debug(stack_a, 'A');
+	print_stack_debug(stack_b, 'B');
+	
 	printf("============= FREE STACK =============\n");
 	ft_free_stack(&stack_a);
 	printf("stack_a == NULL ? %s\n", (stack_a == NULL) ? "SI" : "NO");	
