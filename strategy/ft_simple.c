@@ -46,7 +46,7 @@ void	ft_sort_large_args(t_stack **a, t_stack **b, t_counter *counter)
 	}
 	ft_sort_three(a, counter);
 	while (*b)
-		ft_pa(a, b, counter);
+		ft_pa(b, a, counter);
 }
 
 void	ft_simple(t_stack **a, t_stack **b, t_counter *counter)

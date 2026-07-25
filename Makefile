@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+         #
+#    By: dichacon <dichacon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/14 19:35:12 by andrcarr          #+#    #+#              #
-#    Updated: 2026/07/25 15:10:13 by dichacon         ###   ########.fr        #
+#    Updated: 2026/07/25 19:48:05 by dichacon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ re: fclean all
 
 #--- COMPILACION EJECUTABLE CON MAIN, PARAMETROS PERO SIN FLAGS
 test: re
-	./$(NAME) 5 4 6 3 2 1
+	./$(NAME) -42 18 -7 93 -85 5 61 -12 34 -99 27 -3 50 -68 11
 	@echo "\n✨ ¡Test compilado!"
 
 # --- REGLA PARA DEBUGAR CON GDB ---
