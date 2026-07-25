@@ -12,6 +12,13 @@
 
 #include "../push_swap.h"
 
+static void	free_partial_split(char **arr, int i)
+{
+	while (i--)
+		free(arr[i]);
+	free(arr);
+}
+
 static int	word_count(char const *s, char c)
 {
 	int	count;
@@ -58,7 +65,7 @@ char	**ft_split(char const *s, char c)
 		{
 			arr[i] = get_word(s, c);
 			if (!arr[i])
-				return (ft_free_split(arr, i), NULL);
+				return (free_partial_split(arr, i), NULL);
 			i++;
 		}
 		while (*s && *s != c)

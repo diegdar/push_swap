@@ -17,15 +17,15 @@ int	ft_parse_flags(int argc, char **argv, t_config *config)
 	int	i;
 
 	i = 1;
-	config->bench = 0;
+	config->is_bench = 0;
 	config->algo = ADAPTIVE;
 	while (i < argc)
 	{
 		if (ft_strcmp(argv[i], "--bench") == 0)
 		{
-			if (config->bench)
+			if (config->is_bench)
 				return (1);
-			config->bench = 1;
+			config->is_bench = 1;
 		}
 		else if (ft_strcmp(argv[i], "--simple") == 0)
 		{

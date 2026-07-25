@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/25 14:59:24 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/25 15:00:02 by andrcarr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	main(int argc, char **argv)
@@ -16,14 +28,10 @@ int	main(int argc, char **argv)
 		return (write(2, "Error\n", 6), 1);
 	if (ft_parse_input(&a, argc, argv, &config))
 		return (1);
-	if (ft_is_sorted(a))
-	{
-		ft_free_stack(&a);
-		return (0);
-	}
 	ft_assign_index(a);
 	config.disorder = ft_compute_disorder(a);
-	ft_choose_strategy(&a, &b, &config, &counter);
+	if (!ft_is_sorted(a))
+		ft_choose_strategy(&a, &b, &config, &counter);
 	if (config.is_bench)
 		ft_print_bench(&config, &counter);
 	ft_free_stack(&a);

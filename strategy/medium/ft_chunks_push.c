@@ -2,23 +2,31 @@
 
 void	ft_chunks_push(t_stack **a, t_stack **b, t_counter *counter)
 {
-	int	chunk;
-	int	limit;
-	int	middle;
+	t_position	pos;
+	int			chunk;
+	int			limit;
+	int			middle;
 
 	chunk = ft_chunk_size(ft_stack_size(*a));
 	limit = chunk - 1;
 	while (*a)
 	{
-		middle = limit - chunk / 2;
+		pos = ft_chunk_position(*a, limit);
+		if (pos.from_top == -1)
+		{
+			limit += chunk;
+			continue ;
+		}
+		middle = limit - (chunk / 2);
 		if ((*a)->index <= limit)
 		{
 			ft_pb(a, b, counter);
-			if (*b && (*b)->index <= middle)
+			if (*b && (*b)->index < middle)
 				ft_rb(b, counter);
-			limit++;
 		}
+		else if (pos.from_top <= pos.from_bottom)
+			ft_ra(a, counter);
 		else
-			ft_chunk_rotate(a, limit, counter);
+			ft_rra(a, counter);
 	}
 }

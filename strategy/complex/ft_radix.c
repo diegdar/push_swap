@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_radix.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/25 14:41:40 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/25 19:28:55 by andrcarr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
 static void	ft_process_bit(t_stack **a, t_stack **b,
@@ -17,7 +29,7 @@ static void	ft_process_bit(t_stack **a, t_stack **b,
 		i++;
 	}
 	while (*b)
-		ft_pa(a, b, counter);
+		ft_pa(b, a, counter);
 }
 
 void	ft_radix(t_stack **a, t_stack **b, t_counter *counter)

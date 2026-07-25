@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/07/14 19:35:12 by andrcarr          #+#    #+#              #
-#    Updated: 2026/07/14 19:35:25 by andrcarr         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME		= push_swap
 
 CC			= cc
@@ -40,7 +28,6 @@ STACK = \
 
 SORT = \
 	sort/ft_assign_index.c \
-	sort/ft_find_max.c \
 	sort/ft_find_max_index.c \
 	sort/ft_find_min_index.c \
 	sort/ft_find_position.c \
@@ -60,12 +47,13 @@ MEDIUM = \
 	strategy/medium/ft_medium.c \
 	strategy/medium/ft_chunk_back.c \
 	strategy/medium/ft_chunk_position.c \
-	strategy/medium/ft_chunk_rotate.c \
 	strategy/medium/ft_chunk_size.c \
 	strategy/medium/ft_chunks_push.c
 
 COMPLEX = \
-	strategy/complex/ft_complex.c
+	strategy/complex/ft_complex.c \
+	strategy/complex/ft_get_max_bits.c \
+	strategy/complex/ft_radix.c
 
 STRATEGY = \
 	strategy/ft_compute_disorder.c \
@@ -75,21 +63,20 @@ STRATEGY = \
 	$(COMPLEX)
 
 OPERATIONS = \
-	operations/ft_sa.c \
-	operations/ft_sb.c \
-	operations/ft_ss.c \
-	operations/ft_pa.c \
-	operations/ft_pb.c \
-	operations/ft_ra.c \
-	operations/ft_rb.c \
-	operations/ft_rr.c \
-	operations/ft_rra.c \
-	operations/ft_rrb.c \
-	operations/ft_rrr.c
+	operations/ft_push.c \
+	operations/ft_rotate.c \
+	operations/ft_reverse_rotate.c \
+	operations/ft_swap.c
 
 UTILS = \
 	utils/ft_counter_init.c \
 	utils/ft_free_split.c \
+	utils/ft_print_bench.c \
+	utils/ft_putchar_fd.c \
+	utils/ft_putendl_fd.c \
+	utils/ft_putnbr_fd.c \
+	utils/ft_putpercent_fd.c \
+	utils/ft_putstr_fd.c \
 	utils/ft_split.c \
 	utils/ft_strcmp.c \
 	utils/ft_strdup.c \

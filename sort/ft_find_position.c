@@ -33,5 +33,5 @@ t_position	ft_find_position(t_stack *stack, int index)
 		i++;
 		stack = stack->next;
 	}
-i	return (pos);
+	return (pos);
 }

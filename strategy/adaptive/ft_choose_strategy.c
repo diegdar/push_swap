@@ -1,4 +1,16 @@
-#include "../push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_choose_strategy.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/25 14:40:15 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/25 14:40:33 by andrcarr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../push_swap.h"
 
 void	ft_choose_strategy(t_stack **a, t_stack **b,
 		t_config *config, t_counter *counter)

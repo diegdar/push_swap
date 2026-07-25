@@ -1,15 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_simple.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/25 14:44:35 by andrcarr          #+#    #+#             */
+/*   Updated: 2026/07/25 14:44:37 by andrcarr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
 void	ft_simple(t_stack **a, t_stack **b, t_counter *counter)
 {
-	int	min_index;
+	int	size;
+	int	index;
 
-	while (*a)
+	size = ft_stack_size(*a);
+	index = 0;
+	while (size > 3)
 	{
-		min_index = ft_find_min_index(*a);
-		ft_rotate_to_top(a, min_index, 'a', counter);
+		ft_rotate_to_top(a, index, 'a', counter);
 		ft_pb(a, b, counter);
+		index++;
+		size--;
 	}
+	ft_sort_three(a, counter);
 	while (*b)
-		ft_pa(a, b, counter);
+		ft_pa(b, a, counter);
 }
