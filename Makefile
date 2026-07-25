@@ -6,7 +6,7 @@
 #    By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/14 19:35:12 by andrcarr          #+#    #+#              #
-#    Updated: 2026/07/24 16:27:15 by dichacon         ###   ########.fr        #
+#    Updated: 2026/07/25 15:10:13 by dichacon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC = \
 	sort/ft_find_min.c \
 	sort/ft_is_sorted.c \
 	strategy/ft_compute_disorder.c \
+	strategy/ft_simple.c \
 	utils/ft_split.c \
 	utils/ft_strdup.c \
 	utils/ft_strcmp.c \
@@ -65,12 +66,12 @@ re: fclean all
 
 #--- COMPILACION EJECUTABLE CON MAIN, PARAMETROS PERO SIN FLAGS
 test: re
-	./$(NAME) 6 5 4 3 2 1
+	./$(NAME) 5 4 6 3 2 1
 	@echo "\n✨ ¡Test compilado!"
 
 # --- REGLA PARA DEBUGAR CON GDB ---
 debug: re
-	gdb -ex "source borrar/.gdbinit" --args ./$(NAME) 5 4 3 2 1
+	gdb -ex "source borrar/.gdbinit" --args ./$(NAME) 5 4 6 3 2 1
 	@echo "\n🐛 Compilado en modo DEBUG con GDB."
 
-.PHONY: all clean fclean re test debug		
+.PHONY: all clean fclean re test debug

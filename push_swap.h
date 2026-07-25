@@ -6,7 +6,7 @@
 /*   By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:57:00 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/24 16:22:14 by dichacon         ###   ########.fr       */
+/*   Updated: 2026/07/25 11:14:35 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void    ft_assign_index(t_stack *stack);
 /* STRATEGY */
 
 double	ft_compute_disorder(t_stack *stack);
+void	ft_simple(t_stack **a, t_stack **b, t_counter *counter);
 
 /* UTILS */
 
