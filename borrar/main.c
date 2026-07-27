@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dichacon <dichacon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dichacon <dichacon@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 19:32:01 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/25 19:21:34 by dichacon         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:40:28 by dichacon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,31 @@ void	print_stack_debug(t_stack *stack, char name)
 	printf("------------------\n\n");
 }
 
+void	print_counter(t_counter *counter)
+{
+	const char	*labels[] = {"sa", "sb", "ss", "pa", "pb",
+		"ra", "rb", "rr", "rra", "rrb", "rrr", "total"};
+	int			*fields[] = {
+		&counter->sa, &counter->sb, &counter->ss,
+		&counter->pa, &counter->pb, &counter->ra,
+		&counter->rb, &counter->rr, &counter->rra,
+		&counter->rrb, &counter->rrr, &counter->total
+	};
+	int			i;
+	int			n;
+
+	n = sizeof(fields) / sizeof(fields[0]);
+	printf("\n>>Counter stats in STACK A:\n");
+	i = 0;
+	while (i < n)
+	{
+		if (*fields[i] > 0)
+			printf("  %-6s : %d\n", labels[i], *fields[i]);
+		i++;
+	}
+	printf("------------------\n\n");		
+}
+
 /// @brief 
 /// @param argc 
 /// @param argv 
@@ -54,6 +79,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 
+	ft_memset(&counter, 0, sizeof(t_counter));	
 	printf("============= PARSE FLAGS =============\n");
 
 	start = ft_parse_flags(argc, argv, &config);
@@ -181,6 +207,7 @@ int	main(int argc, char **argv)
 	printf(">>After movement>>\n");
 	print_stack_debug(stack_a, 'A');
 	print_stack_debug(stack_b, 'B');
+	print_counter(&counter);
 	
 	printf("============= FREE STACK =============\n");
 	ft_free_stack(&stack_a);
