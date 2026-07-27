@@ -6,11 +6,11 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 20:45:09 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/25 20:45:13 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:48:12 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../..push_swap.h"
+#include "../../push_swap.h"
 
 void	ft_chunks_push(t_stack **a, t_stack **b, t_counter *counter)
 {

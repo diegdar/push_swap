@@ -6,7 +6,7 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 20:28:48 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/25 20:28:52 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:02:09 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stack
 
 typedef enum e_algorithm
 {
+	SMALL_NUMBERS,
 	SIMPLE,
 	MEDIUM,
 	COMPLEX,
@@ -41,6 +42,7 @@ typedef struct s_config
 {
 	int				is_bench;
 	t_algorithm		algo;
+	t_algorithm		used_algo;
 	int				start;
 	double			disorder;
 }	t_config;
@@ -119,11 +121,7 @@ void		ft_choose_strategy(t_stack **a,
 				t_config *config,
 				t_counter *counter);
 
-/* SIMPLE */
-
-void		ft_simple(t_stack **a,
-				t_stack **b,
-				t_counter *counter);
+/* SMALL NUMBERS */
 
 void		ft_sort_two(t_stack **a,
 				t_counter *counter);
@@ -134,6 +132,14 @@ void		ft_sort_three(t_stack **a,
 void		ft_sort_five(t_stack **a,
 				t_stack **b,
 				t_counter *counter);
+
+/* SIMPLE */
+
+void            ft_simple(t_stack **a,
+                                t_stack **b,
+                                t_counter *counter);
+
+
 
 /* MEDIUM */
 

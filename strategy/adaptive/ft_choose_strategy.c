@@ -6,7 +6,7 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 14:40:15 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/25 14:40:33 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/27 19:24:08 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,20 @@ void	ft_choose_strategy(t_stack **a, t_stack **b,
 	if (size <= 1 || ft_is_sorted(*a))
 		return ;
 	if (size == 2)
+	{
+		config->used_algo = SMALL_NUMBERS;
 		return (ft_sort_two(a, counter));
+	}
 	if (size == 3)
+	{
+		config->used_algo = SMALL_NUMBERS;
 		return (ft_sort_three(a, counter));
+	}
 	if (size <= 5)
+	{
+		config->used_algo = SMALL_NUMBERS;
 		return (ft_sort_five(a, b, counter));
+	}
 	if (config->algo == SIMPLE)
 		return (ft_simple(a, b, counter));
 	if (config->algo == MEDIUM)
@@ -34,17 +43,17 @@ void	ft_choose_strategy(t_stack **a, t_stack **b,
 		return (ft_complex(a, b, counter));
 	if (config->disorder < 0.2)
 	{
-		config->algo = SIMPLE;
+		config->used_algo = SIMPLE;
 		ft_simple(a, b, counter);
 	}
 	else if (config->disorder < 0.5)
 	{
-		config->algo = MEDIUM;
+		config->used_algo = MEDIUM;
 		ft_medium(a, b, counter);
 	}
 	else
 	{
-		config->algo = COMPLEX;
+		config->used_algo = COMPLEX;
 		ft_complex(a, b, counter);
 	}
 }

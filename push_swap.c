@@ -6,7 +6,7 @@
 /*   By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 14:59:24 by andrcarr          #+#    #+#             */
-/*   Updated: 2026/07/25 15:00:02 by andrcarr         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:56:49 by andrcarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 		return (1);
 	ft_assign_index(a);
 	config.disorder = ft_compute_disorder(a);
+	config.used_algo = SIMPLE;
 	if (!ft_is_sorted(a))
 		ft_choose_strategy(&a, &b, &config, &counter);
 	if (config.is_bench)

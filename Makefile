@@ -6,7 +6,7 @@
 #    By: andrcarr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/25 20:29:13 by andrcarr          #+#    #+#              #
-#    Updated: 2026/07/25 20:29:16 by andrcarr         ###   ########.fr        #
+#    Updated: 2026/07/27 18:19:19 by andrcarr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,11 +49,14 @@ SORT = \
 ADAPTIVE = \
 	strategy/adaptive/ft_choose_strategy.c
 
+SMALL_NUMBERS = \
+        strategy/small_numbers/ft_sort_two.c \
+        strategy/small_numbers/ft_sort_three.c \
+        strategy/small_numbers/ft_sort_five.c
+
+
 SIMPLE = \
-	strategy/simple/ft_simple.c \
-	strategy/simple/ft_sort_two.c \
-	strategy/simple/ft_sort_three.c \
-	strategy/simple/ft_sort_five.c
+	strategy/simple/ft_simple.c 
 
 MEDIUM = \
 	strategy/medium/ft_medium.c \
@@ -69,6 +72,7 @@ COMPLEX = \
 
 STRATEGY = \
 	strategy/ft_compute_disorder.c \
+	$(SMALL_NUMBERS) \
 	$(ADAPTIVE) \
 	$(SIMPLE) \
 	$(MEDIUM) \
